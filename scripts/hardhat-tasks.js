@@ -80,9 +80,12 @@ task('deployOnFork', 'Deploys contracts on an existing fork')
     )
     .setAction(async (args) => {
         const contractNames = args.contractNames.join(' ');
-        const cmd = `CONTRACTS="${contractNames}" npx hardhat run ./scripts/utils/deploy-on-fork.js --network fork`;
         try {
-            execSync(cmd, { stdio: 'inherit', shell: true });
+            execSync('npx', ['hardhat', 'run', './scripts/utils/deploy-on-fork.js', '--network', 'fork'], {
+                stdio: 'inherit',
+                shell: true,
+                env: { ...process.env, CONTRACTS: contractNames },
+            });
         } catch (error) {
             console.error(`Command failed: ${error}`);
             process.exit(1);
