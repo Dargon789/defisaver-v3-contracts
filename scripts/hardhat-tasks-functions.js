@@ -1,6 +1,6 @@
 /* eslint-disable no-undef */ // This is to disable warning for hre undefined in file
 const fs = require('fs-extra');
-const { exec } = require('child_process');
+const { exec, execFile } = require('child_process');
 const axios = require('axios');
 const ethers = require('ethers');
 const path = require('path');
@@ -167,13 +167,15 @@ function getInput(text) {
     });
 }
 
-function execShellCommand(cmd) {
+function execShellCommand(cmd, args = []) {
     return new Promise((resolve) => {
-        exec(cmd, (error, stdout, stderr) => {
+        execFile(cmd, args, (error, stdout, stderr) => {
             if (error) {
                 console.warn(error);
             }
-            console.log(stderr);
+            if (stderr) {
+                console.log(stderr);
+            }
             resolve(stdout || stderr);
         });
     });
@@ -453,8 +455,8 @@ async function flatten(filePath) {
         console.error(err);
     }
     // Flatten file, delete unneeded licenses and pragmas
-    await execShellCommand(`npx hardhat flatten ${filePath} > contracts/flattened/${fileName}`);
-    let data = (await fs.readFileSync(`contracts/flattened/${fileName}`)).toString();
+    const flattenedSource = await execShellCommand('npx', ['hardhat', 'flatten', filePath]);
+    let data = flattenedSource.toString();
     data = data.replace(pragmaRegex, '');
     data = data.replace(topLvlCommentsRegex, '');
     const flags = { flag: 'a+' };
