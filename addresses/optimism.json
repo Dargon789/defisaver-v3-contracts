@@ -327,14 +327,15 @@
     },
     {
         "name": "StrategyTriggerViewNoRevert",
-        "address": "0xa63bbC3322778246f216430BE61771f9566f89D0",
+        "address": "0x4289ebe738FEde5167D2AC723bF7486fA41e68D7",
         "id": "0x37a21cb5",
         "path": "contracts/views/strategy/StrategyTriggerViewNoRevert.sol",
-        "version": "1.0.6",
+        "version": "1.0.7",
         "inRegistry": false,
         "changeTime": 0,
         "registryIds": [],
         "history": [
+            "0xa63bbC3322778246f216430BE61771f9566f89D0",
             "0x2BF8A23ECfe84179663e0c6Dfb328cf92b18d561",
             "0xE8Ca11025fC373fb7a42e92eD374f1B8EE2B6F2a",
             "0xbFe9e11963228D82C71F974D0Ff8648569687841",
@@ -345,14 +346,15 @@
     },
     {
         "name": "AaveV3View",
-        "address": "0x5E87F822Aa7af376E91BEdF7B6cCE74Be2782B3a",
+        "address": "0xcc3E5093383f99F1a0766E75644960bfbb90c033",
         "id": "0x026c569e",
         "path": "contracts/views/AaveV3View.sol",
-        "version": "1.0.14",
+        "version": "1.0.15",
         "inRegistry": false,
         "changeTime": 0,
         "registryIds": [],
         "history": [
+            "0x5E87F822Aa7af376E91BEdF7B6cCE74Be2782B3a",
             "0x31fa336650a4c06cAe65985707E9bA09A888bf13",
             "0xB67979842Ec9B462e18834Aee7426ef37938A5Dd",
             "0x5c278b10b839e5ec0a80bcfa8923bae11613c67d",
@@ -849,25 +851,31 @@
     },
     {
         "name": "AaveV3RatioTrigger",
-        "address": "0x61658f75426FCE5e00DFd9c57b5eDe25229DD063",
+        "address": "0xD71a29E4210C2D3DadaF559AAEDB5a29F2F2c878",
         "id": "0x21a42a26",
         "path": "contracts/triggers/AaveV3RatioTrigger.sol",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "inRegistry": true,
         "changeTime": "86400",
         "registryIds": [],
-        "history": ["0xB76e3f7694589D0f34ba43b17AD0D15350Ab5f85"]
+        "history": [
+            "0x61658f75426FCE5e00DFd9c57b5eDe25229DD063",
+            "0xB76e3f7694589D0f34ba43b17AD0D15350Ab5f85"
+        ]
     },
     {
         "name": "AaveV3RatioCheck",
-        "address": "0x6272515E2cC68DE4Eae333A8B2e277C54a9024da",
+        "address": "0xD6FD0ea238aBB0fDcb861Fd18B2478BDF41bc4c9",
         "id": "0x71ef3d4e",
         "path": "contracts/actions/checkers/AaveV3RatioCheck.sol",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "inRegistry": true,
         "changeTime": "86400",
         "registryIds": [],
-        "history": ["0x7A36779a7b5F1128B28932604057d5b63361297c"]
+        "history": [
+            "0x6272515E2cC68DE4Eae333A8B2e277C54a9024da",
+            "0x7A36779a7b5F1128B28932604057d5b63361297c"
+        ]
     },
     {
         "name": "FLActionL2",
@@ -1162,28 +1170,29 @@
     },
     {
         "name": "AaveV3OpenRatioCheck",
-        "address": "0x64bfC6d69a43E999728C63EBBA188D2c198ee66B",
+        "address": "0x8803e8529C34669637BD1e1b3Eefc91eB1488F80",
         "id": "0x72b17abf",
         "path": "contracts/actions/checkers/AaveV3OpenRatioCheck.sol",
-        "version": "1.0.2",
+        "version": "1.0.3",
         "inRegistry": true,
         "changeTime": "86400",
         "registryIds": [],
         "history": [
+            "0x64bfC6d69a43E999728C63EBBA188D2c198ee66B",
             "0xAF5D3604B1bE08fadD239b2A7353F01786cE4b0e",
             "0xA41baFAE6832D6D059eEcac0eBB46c4D8c16c248"
         ]
     },
     {
         "name": "CompV3RatioTrigger",
-        "address": "0x321639cc7492D97294ADA6B6Ad867d93673316D4",
+        "address": "0x904BA4140ECB9583aE729d4BDBCa8B9FBD2694B4",
         "id": "0x506812d0",
         "path": "contracts/triggers/CompV3RatioTrigger.sol",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "inRegistry": true,
         "changeTime": "86400",
         "registryIds": [],
-        "history": []
+        "history": ["0x321639cc7492D97294ADA6B6Ad867d93673316D4"]
     },
     {
         "name": "MerklClaim",
@@ -1289,6 +1298,138 @@
         "address": "0xC24863ce3397316b743112AeBc2eBCF5507bFD42",
         "id": "0xa7559614",
         "path": "contracts/actions/summerfi/SummerfiUnsubV2.sol",
+        "version": "1.0.0",
+        "inRegistry": false,
+        "changeTime": 0,
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "FLAaveV3CarryDebt",
+        "address": "0x4ab7a392aF23215A9049A64F3B2d44726aD2D6fe",
+        "id": "0x66258f8a",
+        "path": "contracts/actions/flashloan/FLAaveV3CarryDebt.sol",
+        "version": "1.0.0",
+        "inRegistry": true,
+        "changeTime": "86400",
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "AaveV3DelegateCredit",
+        "address": "0x11E7B19195a76D2E5A4863cf6cbE8030443c729A",
+        "id": "0xf57df0e7",
+        "path": "contracts/actions/aaveV3/AaveV3DelegateCredit.sol",
+        "version": "1.0.0",
+        "inRegistry": true,
+        "changeTime": "86400",
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "FeeReceiver",
+        "address": "0x5894Ef2cB79802F60ecB749Ea0FDe80f5016B4f1",
+        "id": "0x6a17809a",
+        "path": "contracts/utils/fee/FeeReceiver.sol",
+        "version": "1.0.0",
+        "inRegistry": false,
+        "changeTime": 0,
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "AaveV3MinDebtTrigger",
+        "address": "0x8F521d036b395E2dd4B3A10348d323ec75A375e6",
+        "id": "0xb3fa1599",
+        "path": "contracts/triggers-additional/AaveV3MinDebtTrigger.sol",
+        "version": "1.0.0",
+        "inRegistry": false,
+        "changeTime": 0,
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "RequiredAmountAndAllowanceTrigger",
+        "address": "0x6CF5c0daBD33FD24258936eb90cE5d1b4D5FF974",
+        "id": "0xbd30ff8e",
+        "path": "contracts/triggers-additional/RequiredAmountAndAllowanceTrigger.sol",
+        "version": "1.0.0",
+        "inRegistry": false,
+        "changeTime": 0,
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "TriggerView",
+        "address": "0x4e30a875883187F6Af8E3493127d11a322E52379",
+        "id": "0x628ee7ee",
+        "path": "contracts/views/strategy/TriggerView.sol",
+        "version": "1.0.0",
+        "inRegistry": false,
+        "changeTime": 0,
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "CompV3PriceTrigger",
+        "address": "0x485fB3e0b7cC42d8535A32D8284317510541E629",
+        "id": "0xb67d04b5",
+        "path": "contracts/triggers/CompV3PriceTrigger.sol",
+        "version": "1.0.0",
+        "inRegistry": false,
+        "changeTime": 0,
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "CompV3RatioCheck",
+        "address": "0x9a2806bbAed273C40D0BF2767251f97742E451e5",
+        "id": "0x2ce67bb9",
+        "path": "contracts/actions/checkers/CompV3RatioCheck.sol",
+        "version": "1.0.0",
+        "inRegistry": true,
+        "changeTime": "86400",
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "GeneralView",
+        "address": "0xAA0e3be14C27d7497aE58b4A700ba3885Cfd519b",
+        "id": "0xc5831ea6",
+        "path": "contracts/views/GeneralView.sol",
+        "version": "1.0.1",
+        "inRegistry": false,
+        "changeTime": 0,
+        "registryIds": [],
+        "history": ["0x51faDAD47Df16E59De6203Ab0559Fe6FFAE9aC9B"]
+    },
+    {
+        "name": "FlyWrapper",
+        "address": "0x0f0b4479603cd9ac2D977234d37f0B3A07A4E8c3",
+        "id": "0x92b2d9f8",
+        "path": "contracts/exchangeV3/offchainWrappersV3/FlyWrapper.sol",
+        "version": "1.0.0",
+        "inRegistry": false,
+        "changeTime": 0,
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "OpenOceanWrapper",
+        "address": "0x9Cfb942ED7C438D5257dA4266277Cb454ab5d02b",
+        "id": "0x9e3c90cd",
+        "path": "contracts/exchangeV3/offchainWrappersV3/OpenOceanWrapper.sol",
+        "version": "1.0.0",
+        "inRegistry": false,
+        "changeTime": 0,
+        "registryIds": [],
+        "history": []
+    },
+    {
+        "name": "AaveV3BoostCollateralTrigger",
+        "address": "0xad36b6c8463DfE76eB6E5Ddd561E058b4D591317",
+        "id": "0xb03dd233",
+        "path": "contracts/triggers-additional/AaveV3BoostCollateralTrigger.sol",
         "version": "1.0.0",
         "inRegistry": false,
         "changeTime": 0,

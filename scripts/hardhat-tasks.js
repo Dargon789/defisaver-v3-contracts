@@ -9,6 +9,30 @@ const {
     encryptPrivateKey,
 } = require('./hardhat-tasks-functions');
 
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const VERIFY_RETRIES = 5;
+const VERIFY_RETRY_DELAY_MS = 20000;
+
+// Etherscan needs the creation tx indexed before it can verify, so the first
+// attempt right after deployment often gets rejected. Retry a few times.
+const verifyWithRetry = async (contractAddress, contractName) => {
+    for (let attempt = 1; attempt <= VERIFY_RETRIES; attempt++) {
+        try {
+            await verifyContract(contractAddress, contractName);
+            return;
+        } catch (error) {
+            if (attempt === VERIFY_RETRIES) {
+                throw error;
+            }
+            console.log(
+                `Retrying ${contractName} (${attempt}/${VERIFY_RETRIES}): ${error.message}`,
+            );
+            await sleep(VERIFY_RETRY_DELAY_MS);
+        }
+    }
+};
+
 task('fladepver', 'Deploys and verifies contract(s) on etherscan')
     .addPositionalParam('gas', 'The price (in gwei) per unit of gas')
     .addVariadicPositionalParam(
@@ -42,9 +66,10 @@ task('fladepver', 'Deploys and verifies contract(s) on etherscan')
         // Ver - Verify
         console.log('\nStarting contract verification...');
         const verificationPromises = Object.entries(deployedAddresses).map(
-            async ([contractName, contractAddress]) => {
+            async ([contractName, contractAddress], index) => {
                 try {
-                    await verifyContract(contractAddress, contractName);
+                    await sleep(index * 1000);
+                    await verifyWithRetry(contractAddress, contractName);
                     console.log(`✓ ${contractName} verified successfully`);
                 } catch (error) {
                     console.log(`✗ Failed to verify ${contractName}: ${error.message}`);
